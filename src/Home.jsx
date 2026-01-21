@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import ProductList from './components/products/ProductList';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -11,7 +12,12 @@ const Home = () => {
        const fectchProducts = async () => {
            try{
                const response = await axios.get('http://e-commerce-laravel.test/api/products');
-               console.log("response is", response.data);
+                setProducts(response.data.data);
+                setColors(response.data.colors);
+                setSizes(response.data.sizes);
+
+                console.log(response.data.data);
+
            }catch(e){
                console.log(e);
            }
@@ -19,10 +25,12 @@ const Home = () => {
 
        fectchProducts();
     })
+
+
     return (
         <>
             <div className="Home">
-                Home
+                <ProductList products={products}/>
             </div>
         </>
     )
