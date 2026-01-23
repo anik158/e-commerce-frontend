@@ -30,9 +30,9 @@ const Home = () => {
 
     return (
         <>
-            <div className="Home">
-                <ProductList products={products} colors={colors} sizes={sizes}/>
-            </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> 
+            <ProductList products={products} colors={colors} sizes={sizes}/>
+        </div>
         </>
     )
 }
