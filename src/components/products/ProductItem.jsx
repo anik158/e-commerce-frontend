@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductItem = ({ product, colors, sizes }) => {
     return (
-        <a className="flex flex-col bg-white border border-gray-200 shadow-md rounded-xl hover:shadow-lg focus:outline-none transition" href="#">
+        <a className="flex flex-col bg-white border border-gray-200 shadow-md rounded-xl hover:shadow-lg overflow-hidden  focus:outline-none transition" href="#">
             <img
                 className="w-full h-64 object-cover"
                 src={product.first_image}
