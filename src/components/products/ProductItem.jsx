@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductItem = ({ product, colors, sizes }) => {
+const ProductItem = ({product}) => {
     return (
         <a className="flex flex-col bg-white border border-gray-200 shadow-md rounded-xl hover:shadow-lg overflow-hidden  focus:outline-none transition" href="#">
             <img
@@ -26,7 +26,7 @@ const ProductItem = ({ product, colors, sizes }) => {
               
                 <div className="flex items-center justify-between mb-3">
                     <div className="flex gap-2">
-                        {sizes?.map((s) => (
+                        {product.sizes?.map((s) => (
                             <span
                                 key={s.id}
                                 className="px-2 py-1 text-sm bg-gray-100 rounded-md"
@@ -45,7 +45,7 @@ const ProductItem = ({ product, colors, sizes }) => {
 
                 {/* Colors row */}
                 <div className="flex gap-2">
-                    {colors?.map((c) => (
+                    {product.colors?.map((c) => (
                         <span
                             key={c.id}
                             className="px-2 py-1 text-sm bg-blue-100 rounded-md"
