@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductItem = ({product}) => {
     return (
-        <a className="flex flex-col bg-white border border-gray-200 shadow-md rounded-xl hover:shadow-lg overflow-hidden  focus:outline-none transition" href="#">
+        <Link className="flex flex-col bg-white border border-gray-200 shadow-md rounded-xl hover:shadow-lg overflow-hidden  focus:outline-none transition" to={`/products/${product.id}`}>
             <img
                 className="w-full h-64 object-cover"
                 src={product.first_image}
@@ -55,7 +56,7 @@ const ProductItem = ({product}) => {
                     ))}
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };
 
